@@ -30,6 +30,10 @@ This project offers a straightforward fix: **hash the request parameters to a lo
 ### Install
 
 ```bash
+# From GitHub (recommended)
+pip install git+https://github.com/liulin0x3c/litellm-cache.git
+
+# Or from local path
 pip install -e /path/to/litellm_with_cahce    # editable install for development
 pip install /path/to/litellm_with_cahce        # or direct install
 ```
@@ -132,6 +136,10 @@ Path: `.cache/{cache_index}/{hash}.json`
 ### 安装
 
 ```bash
+# 从 GitHub 安装（推荐）
+pip install git+https://github.com/liulin0x3c/litellm-cache.git
+
+# 或从本地路径安装
 pip install -e /path/to/litellm_with_cahce    # 可编辑安装，适合开发
 pip install /path/to/litellm_with_cahce        # 或直接安装
 ```
@@ -207,3 +215,4 @@ for task in tasks:
 - 仅在 `stream=False` 时缓存，流式输出不缓存。
 - 缓存匹配基于参数的严格哈希，参数有任何变化（包括 message 内容、顺序、model 名称）都会视为新请求。
 - 不做缓存过期和淘汰，需要手动删除 `.cache/` 下的目录或文件来清理。
+
