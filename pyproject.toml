@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "litellm-cache"
+version = "0.1.0"
+description = "基于 LiteLLM 的多模型供应商统一调用工具，附带文件系统缓存层"
+requires-python = ">=3.9"
+dependencies = [
+    "litellm>=1.82.0",
+]
+
+[project.optional-dependencies]
+proxy = ["litellm[proxy]>=1.82.0"]
+
+[tool.setuptools.packages.find]
+include = ["litellm_cache*"]
